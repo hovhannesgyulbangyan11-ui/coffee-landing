@@ -1,0 +1,428 @@
+/* ===== 1. Переменные (цвета и размеры из макета Figma) ===== */
+:root {
+  --color-bg: #FFF8F0;
+  --color-dark: #2B1B12;
+  --color-accent: #C8702A;
+  --color-muted: #7A6A5E;
+  --color-white: #FFFFFF;
+  --color-placeholder: #E8C9A5;
+  --color-footer: #1D120B;
+
+  --radius-card: 16px;
+  --radius-button: 10px;
+  --container-width: 1120px;
+}
+
+/* ===== 2. Сброс стилей ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== 3. Базовые стили ===== */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-dark);
+  background: var(--color-white);
+}
+
+h1 { font-size: 2.25rem; line-height: 1.15; }  /* 36px на мобильных, 56px вырастим позже */
+h2 { font-size: 1.75rem; line-height: 1.15; }  /* 28px на мобильных, 36px вырастим позже */
+h3 { font-size: 1.25rem; }
+
+/* Контейнер: центрирует содержимое и даёт боковые поля */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+/* ===== 4. Кнопки ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--radius-button);
+  border: 2px solid var(--color-accent);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+/* Видимый фокус для клавиатуры */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+/* ===== 5. Блоки страницы =====
+   Дальше вы верстаете сами, по одному блоку, начиная с мобильной версии:
+   .header, .hero, .features, .menu, .testimonials, .contact, .footer
+   Сначала пишем стили для телефона, потом добавляем @media (min-width: 768px) для десктопа.
+*/
+/* ===== Header ===== */
+.header {
+  background: var(--color-white);
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 16px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+}
+/* ===== Hero ===== */
+.hero {
+  background: var(--color-bg);
+  padding-block: 48px;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;   /* на телефоне: текст сверху, фото снизу */
+  gap: 32px;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero__label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.hero__text p:not(.hero__label) {
+  font-size: 1.125rem;
+  color: var(--color-muted);
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero__img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: 70% center;   /* чтобы чашка не обрезалась */
+  border-radius: 24px;
+}
+/* ===== Карточки (общие) ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  background: var(--color-bg);
+  border-radius: var(--radius-card);
+}
+
+/* ===== Features ===== */
+.features {
+  padding-block: 64px;
+}
+
+.features h2,
+.menu h2,
+.testimonials h2,
+.contact h2 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* на телефоне: одна колонка */
+  gap: 24px;
+}
+
+.card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.card p {
+  color: var(--color-muted);
+}
+/* ===== Menu ===== */
+.menu {
+  padding-block: 64px;
+  background: var(--color-bg);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* на телефоне: одна колонка */
+  gap: 24px;
+}
+
+.menu-item {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  overflow: hidden;             /* чтобы картинка не выходила за скруглённые углы */
+}
+
+.menu-item__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 60%;  /* для фото булочек */
+}
+
+.placeholder {
+  background: var(--color-placeholder);
+}
+
+.menu-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+}
+
+.price {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+/* ===== Testimonials ===== */
+.testimonials {
+  padding-block: 64px;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.testimonials blockquote {
+  margin: 0;                    /* убираем стандартные отступы цитаты */
+}
+
+.testimonials blockquote p {
+  font-size: 1.125rem;
+  color: var(--color-dark);
+}
+
+.testimonials footer {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* ===== Contact ===== */
+.contact {
+  padding-block: 64px;
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.form label {
+  font-weight: 500;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: var(--radius-button);
+  font: inherit;                /* поля берут шрифт страницы, а не системный */
+  color: var(--color-dark);
+  background: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form .btn {
+  margin-top: 8px;
+  font: inherit;
+  font-weight: 500;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding-block: 32px;
+  background: var(--color-footer);
+  color: #CFC3B8;
+  font-size: 0.875rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;       /* на телефоне: строки друг под другом */
+  gap: 8px;
+  text-align: center;
+}
+/* ===== Планшет: от 768px ===== */
+@media (min-width: 768px) {
+  h1 { font-size: 3.5rem; }      /* 56px */
+  h2 { font-size: 2.25rem; }     /* 36px */
+
+  .features,
+  .menu,
+  .testimonials,
+  .contact {
+    padding-block: 96px;
+  }
+
+  .hero {
+    padding-block: 96px;
+  }
+
+  .hero__inner {
+    flex-direction: row;         /* текст и фото рядом */
+    align-items: center;
+    gap: 64px;
+  }
+
+  .hero__text,
+  .hero__img {
+    flex: 1;                     /* делят ширину поровну */
+  }
+
+  .hero__img {
+    height: 440px;
+  }
+
+  .features__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);   /* на планшете 2 колонки */
+  }
+
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* ===== Десктоп: от 1024px ===== */
+@media (min-width: 1024px) {
+  .menu__grid {
+    grid-template-columns: repeat(4, 1fr);   /* на десктопе 4 колонки */
+  }
+}
+/* ===== Hover и анимации ===== */
+html {
+  scroll-behavior: smooth;       /* плавная прокрутка по ссылкам меню */
+}
+
+.btn {
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn--primary:hover {
+  background: #A85A1D;           /* чуть темнее акцента */
+  border-color: #A85A1D;
+  transform: translateY(-2px);
+}
+
+.btn--secondary:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.nav a {
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--color-accent);
+}
+
+.card,
+.menu-item {
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover,
+.menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(43, 27, 18, 0.12);
+}
+
+/* Для тех, у кого в системе отключена анимация */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

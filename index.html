@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brew &amp; Bean | Specialty coffee in Yerevan</title>
+  <meta name="description" content="Locally roasted coffee, handmade pastries and a cozy place to start your morning.">
+
+  <!-- Шрифт Inter из Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Brew &amp; Bean</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#menu" class="btn btn--primary">Order now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 2. Hero -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__label">Specialty coffee</p>
+          <h1>Fresh coffee, made with care</h1>
+          <p>Locally roasted beans, handmade pastries and a cozy place to start your morning.</p>
+          <div class="hero__buttons">
+            <a href="#menu" class="btn btn--primary">View menu</a>
+            <a href="#contact" class="btn btn--secondary">Find us</a>
+          </div>
+        </div>
+        <img class="hero__img" src="images/hero-latte.webp" width="1200" height="800"
+     alt="Latte with a leaf pattern in a white cup on a table with magazines">
+      </div>
+    </section>
+
+    <!-- 3. Features -->
+    <section class="features" id="about">
+      <div class="container">
+        <h2>Why choose us</h2>
+        <div class="features__grid">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Fresh beans</h3>
+            <p>We roast small batches every week for peak flavor.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Handmade pastries</h3>
+            <p>Baked each morning in our own kitchen.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Cozy atmosphere</h3>
+            <p>Free Wi-Fi and plenty of space to work or relax.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Menu -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2>Our menu</h2>
+        <div class="menu__grid">
+          <article class="menu-item">
+            <div class="menu-item__img placeholder" role="img" aria-label="Espresso photo coming soon"></div>
+            <div class="menu-item__info">
+              <h3>Espresso</h3>
+              <p class="price">$3.00</p>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="menu-item__img placeholder" role="img" aria-label="Cappuccino photo coming soon"></div>
+            <div class="menu-item__info">
+              <h3>Cappuccino</h3>
+              <p class="price">$4.50</p>
+            </div>
+          </article>
+          <article class="menu-item">
+              <img class="menu-item__img" src="images/menu-pastry.webp" width="600" height="900" loading="lazy"
+        alt="Freshly baked sesame pastries on parchment paper">
+            <div class="menu-item__info">
+              <h3>Sesame pastry</h3>
+              <p class="price">$3.50</p>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="menu-item__img placeholder" role="img" aria-label="Cheesecake photo coming soon"></div>
+            <div class="menu-item__info">
+              <h3>Cheesecake</h3>
+              <p class="price">$5.00</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>What our guests say</h2>
+        <div class="testimonials__grid">
+          <blockquote class="card">
+            <p>The best cappuccino in town, and the staff always remember my order.</p>
+            <footer>Anna K.</footer>
+          </blockquote>
+          <blockquote class="card">
+            <p>A perfect spot to work for a few hours. Great coffee and fast Wi-Fi.</p>
+            <footer>David M.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact form -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Get in touch</h2>
+        <form class="form" action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn btn--primary">Send message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 Brew &amp; Bean</p>
+      <p>Yerevan, Armenia | hello@brewbean.example</p>
+    </div>
+  </footer>
+
+</body>
+</html>
