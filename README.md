@@ -2,12 +2,12 @@
 
 Responsive landing page built from a Figma design.
 
-**Live demo:** https://silver-melomakarona-f89869.netlify.app
+**Live demo:**(https://cofeehouce.netlify.app)
 
 ## Tech
 - HTML5, CSS3 (Flexbox, Grid, CSS variables)
 - Mobile-first responsive layout
-- Lighthouse: Performance 95, Accessibility 90, Best Practices 97, SEO 89
+- Lighthouse: Performance 95, Accessibility 90, Best Practices 97, SEO 95
 
 ## Features
 - Fully responsive (mobile, tablet, desktop)
