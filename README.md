@@ -7,7 +7,7 @@ Responsive landing page built from a Figma design.
 ## Tech
 - HTML5, CSS3 (Flexbox, Grid, CSS variables)
 - Mobile-first responsive layout
-- Lighthouse: Performance 97, Accessibility 100, Best Practices 100, SEO 100
+- Lighthouse:Performance 97, Accessibility 100, Best Practices 100, SEO 100
 
 ## Features
 - Fully responsive (mobile, tablet, desktop)
